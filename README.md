@@ -1,4 +1,5 @@
 # weather--vite-ts-tailwindcss
+
 学习 vite、vue3.2、TypeScript、Tailwind CSS 的 weather 项目
 
 ## Project Setup
@@ -91,10 +92,20 @@ npx tailwindcss init -p
 > require("@rushstack/eslint-patch/modern-module-resolution");
 > 
 > module.exports = {
->      env: {
->        node: true,
->      },
+>    env: {    
+>      node: true,
+>    },
 > };
+> ```
+>
+> 问题：WebStorm 插件 Tailwind CSS 失效
+>
+> 解决：
+>
+> `Bash`:
+>
+> ```bash
+> npm i -D tailwindcss@3.1.8
 > ```
 
 `tailwind.config.js`:
@@ -169,29 +180,29 @@ npm i axios
 > see `node_modules\@iconify\json\collections.md`
 
 ```javascript
+import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
 import AutoImport from "unplugin-auto-import/vite";
 import IconsResolver from "unplugin-icons/resolver";
 import Icons from "unplugin-icons/vite";
 import Components from "unplugin-vue-components/vite";
 import { defineConfig } from "vite";
-import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ["vue", "vue-router", "pinia", { axios: [["default", "axios"]] }],
+      dirs: ["src/composables"],
+      imports: ["vue", "vue-router", "pinia", { axios: [["default", "axios"]] }, { "lodash-es": ["debounce"] }],
       dts: true,
       eslintrc: { enabled: true },
     }),
     Components({
       resolvers: [
         IconsResolver({
-          enabledCollections: ["icon-park-outline"],
-          alias: { park: "icon-park-outline" },
-          prefix: "icon",
+          enabledCollections: ["material-symbols", "line-md", "icon-park-outline"],
+          prefix: "",
         }),
       ],
       dts: true,
@@ -216,9 +227,9 @@ export default defineConfig({
 > require("@rushstack/eslint-patch/modern-module-resolution");
 > 
 > module.exports = {
->     extends: [
->        ".eslintrc-auto-import.json"
->     ],
+>    extends: [
+>      ".eslintrc-auto-import.json"
+>    ],
 > };
 > ```
 >
@@ -230,10 +241,10 @@ export default defineConfig({
 >
 > ```json
 > {
->     "include": [
->        "auto-imports.d.ts",
->        "components.d.ts"
->     ]
+>    "include": [
+>      "auto-imports.d.ts",
+>      "components.d.ts"
+>    ]
 > }
 > ```
 >
@@ -251,3 +262,10 @@ git remote add origin git@github.com:cicadasinging/weather--vite-ts-tailwindcss.
 git push -f origin main
 ```
 
+### 其他工具
+
+`Bash`:
+
+```bash
+npm i lodash-es
+```

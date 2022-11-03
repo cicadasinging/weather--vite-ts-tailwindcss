@@ -1,23 +1,33 @@
+import HomeView from "@/views/HomeView.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "HomeView",
       component: HomeView,
+      meta: { title: "Home" },
     },
     {
-      path: "/about",
-      name: "about",
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import("../views/AboutView.vue"),
+      path: "/place/:state/:city",
+      name: "PlaceView",
+      component: () => import("@/views/PlaceView.vue"),
+      meta: { title: "Place" },
+    },
+    {
+      path: "/places",
+      name: "PlacesView",
+      component: () => import("@/views/PlacesView.vue"),
+      meta: { title: "Places" },
     },
   ],
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = `${to.params.state ? `${to.params.city}, ${to.params.state}` : to.meta.title} | The Local Weather`;
+  next();
 });
 
 export default router;

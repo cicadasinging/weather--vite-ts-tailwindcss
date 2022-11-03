@@ -11,16 +11,15 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      imports: ["vue", "vue-router", "pinia", { axios: [["default", "axios"]] }],
+      imports: ["vue", "vue-router", "pinia", { axios: [["default", "axios"]] }, { "lodash-es": ["debounce"] }],
       dts: true,
       eslintrc: { enabled: true },
     }),
     Components({
       resolvers: [
         IconsResolver({
-          enabledCollections: ["icon-park-outline"],
-          alias: { park: "icon-park-outline" },
-          prefix: "icon",
+          enabledCollections: ["material-symbols", "line-md", "icon-park-outline"],
+          prefix: "",
         }),
       ],
       dts: true,
