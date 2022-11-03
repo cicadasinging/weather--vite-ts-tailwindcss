@@ -37,7 +37,6 @@
 
 <script lang="ts" setup>
 import getPlaceData from "@/apis/getPlaceData";
-import usePlaces from "@/composables/usePlaces";
 
 const searchModel = ref("");
 const searchSuccess = ref(false);

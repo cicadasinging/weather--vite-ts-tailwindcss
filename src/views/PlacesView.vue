@@ -15,7 +15,6 @@
 
 <script lang="ts" setup>
 import usePlacesStore from "@/stores/usePlacesStore";
-import usePlaces from "@/composables/usePlaces";
 
 const placesStore = usePlacesStore();
 const { routePlace, removePlace } = usePlaces();

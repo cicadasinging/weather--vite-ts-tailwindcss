@@ -15,7 +15,6 @@
 import getWeatherData from "@/apis/getWeatherData";
 import usePlacesStore from "@/stores/usePlacesStore";
 import type { IPlace } from "@/types/place";
-import usePlaces from "@/composables/usePlaces";
 
 const placesStore = usePlacesStore();
 const { lon, lat } = placesStore.place as IPlace;

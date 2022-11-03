@@ -11,6 +11,7 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
+      dirs: ["src/composables"],
       imports: ["vue", "vue-router", "pinia", { axios: [["default", "axios"]] }, { "lodash-es": ["debounce"] }],
       dts: true,
       eslintrc: { enabled: true },
