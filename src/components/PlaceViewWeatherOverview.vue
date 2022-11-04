@@ -24,7 +24,6 @@
 </template>
 
 <script lang="ts" setup>
-import usePlacesStore from "@/stores/usePlacesStore";
 import type { IWeather } from "@/types/weather";
 
 defineProps<{ weatherData: IWeather }>();

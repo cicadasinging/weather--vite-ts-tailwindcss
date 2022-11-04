@@ -1,4 +1,3 @@
-import { getPlacesLocalStorage, setPlacesLocalStorage } from "@/utils/usePlacesLocalStorage";
 import type { IPlace } from "@/types/place";
 
 export default defineStore("places", {

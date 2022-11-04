@@ -1,4 +1,3 @@
-import usePlacesStore from "@/stores/usePlacesStore";
 import type { IPlace } from "@/types/place";
 
 export default () => {

@@ -14,8 +14,6 @@
 </template>
 
 <script lang="ts" setup>
-import usePlacesStore from "@/stores/usePlacesStore";
-
 const placesStore = usePlacesStore();
 const { routePlace, removePlace } = usePlaces();
 </script>

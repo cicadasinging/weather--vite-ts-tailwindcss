@@ -1,10 +1,10 @@
-const service = axios.create({
+const request = axios.create({
   timeout: 10000,
 });
 
-service.interceptors.response.use(
+request.interceptors.response.use(
   (res) => Promise.resolve(res.data),
   (err) => Promise.reject(err)
 );
 
-export default service;
+export default request;

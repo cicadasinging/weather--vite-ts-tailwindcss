@@ -6,7 +6,5 @@
 </template>
 
 <script lang="ts" setup>
-import usePlacesStore from "@/stores/usePlacesStore";
-
 const placesStore = usePlacesStore();
 </script>

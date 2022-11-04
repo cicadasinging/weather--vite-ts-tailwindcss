@@ -12,8 +12,6 @@
 </template>
 
 <script lang="ts" setup>
-import getWeatherData from "@/apis/getWeatherData";
-import usePlacesStore from "@/stores/usePlacesStore";
 import type { IPlace } from "@/types/place";
 
 const placesStore = usePlacesStore();
