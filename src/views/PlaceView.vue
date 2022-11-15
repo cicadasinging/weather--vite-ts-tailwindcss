@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <suspense>
-      <PlaceViewAsync />
-      <template #fallback>
-        <PlaceViewSkeleton />
-      </template>
-    </suspense>
-  </div>
+  <suspense>
+    <PlaceViewAsync />
+    <template #fallback>
+      <PlaceViewSkeleton />
+    </template>
+  </suspense>
 </template>

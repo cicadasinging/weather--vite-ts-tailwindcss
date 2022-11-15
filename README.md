@@ -175,11 +175,11 @@ npm i -D @iconify/json
 npm i axios
 ```
 
-`vite.config.js`:
+`vite.config.ts`:
 
 > see `node_modules\@iconify\json\collections.md`
 
-```javascript
+```typescript
 import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
 import AutoImport from "unplugin-auto-import/vite";
